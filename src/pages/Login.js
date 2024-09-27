@@ -1,39 +1,17 @@
-import React, { useEffect, useRef, useState } from 'react';
-import * as THREE from 'three';
-import RINGS from 'vanta/dist/vanta.rings.min';
+import React, { useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 import '../styles/Login.css';
 
-const supabase = createClient('https://appqqpxjhiehvcgtivvs.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFwcHFxcHhqaGllaHZjZ3RpdnZzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTk5ODQ4MzYsImV4cCI6MjAzNTU2MDgzNn0._jdG1rPRq6J62pYxJX-XYGirQhOXUSVmLaNi7l8y9rQ');
+const supabase = createClient('https://appqqpxjhiehvcgtivvs.supabase.co/', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFwcHFxcHhqaGllaHZjZ3RpdnZzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTk5ODQ4MzYsImV4cCI6MjAzNTU2MDgzNn0._jdG1rPRq6J62pYxJX-XYGirQhOXUSVmLaNi7l8y9rQ');
 
 const Login = () => {
-    const vantaRef = useRef(null);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [Name, setName] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
-    const navigate = useNavigate(); // Initialize useNavigate
-
-    useEffect(() => {
-        const vantaEffect = RINGS({
-            el: vantaRef.current,
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: window.innerHeight,
-            minWidth: window.innerWidth,
-            scale: 1.00,
-            backgroundColor: 0x000000,
-            scaleMobile: 1.00,
-            THREE: THREE
-        });
-
-        return () => {
-            if (vantaEffect) vantaEffect.destroy();
-        };
-    }, []);
+    const navigate = useNavigate();
 
     const handleLogin = async () => {
         const { data: user, error } = await supabase
@@ -68,8 +46,8 @@ const Login = () => {
     };
 
     return (
-        <div style={{ width: '100%' }}>
-            <div ref={vantaRef} className="container">
+        <div >
+            <div className="container">
                 <input type="checkbox" id="signup_toggle" />
                 <form className="form">
                     <div className="form_front">
@@ -96,7 +74,7 @@ const Login = () => {
                             Login
                         </button>
                         <span className="switch">
-                            Don't have an account?
+                            No account?
                             <label className="signup_tog" htmlFor="signup_toggle">
                                 &nbsp;&nbsp; Sign Up
                             </label>

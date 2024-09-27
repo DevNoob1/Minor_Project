@@ -100,17 +100,14 @@ const SoundRecorderLayout = () => {
                     <div key={index} className="sound-card">
                         <div className="card-content">
                             <span className="sound-name">{sound.name}</span>
-                            <span className="sound-date">{sound.date}</span>
+                            {/* <span className="sound-date">{sound.date}</span> */}
                         </div>
-                        <button
-                            className="play-pause-btn"
-                            onClick={() => handlePlayPauseClick(index)}
-                        >
-                            {playingIndex === index && !audioRef.current?.paused ? 'Pause' : 'Play'}
-                        </button>
-                        {playingIndex === index && (
-                            <audio ref={audioRef} controls />
-                        )}
+                        {/* Directly include the audio player here */}
+                        <audio
+                            controls
+                            src={sound.url}
+                            className="audio-player"
+                        />
                     </div>
                 ))}
             </div>

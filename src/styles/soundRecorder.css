@@ -16,6 +16,7 @@
     background-color: rgba(40, 40, 40, 0.569);
     border-radius: 10px;
     margin-right: 20px;
+    margin-bottom: 20px;
     overflow-y: auto;
     width: 30%;
     /* Adjusted width */
@@ -77,6 +78,7 @@
     background-color: rgba(32, 32, 32, 0.569);
     border-radius: 10px;
     padding: 40px;
+    margin-top: 40px;
     margin-right: 40px;
     width: 30%;
     box-sizing: border-box;
@@ -485,4 +487,285 @@ button .span-mother2 span:nth-child(6) {
 .audio.green-audio-player .volume .volume-controls .slider .progress .pin {
     left: -5px;
     top: -8px;
+}
+
+/* Mobile version CSS */
+
+/* Adjust container layout for mobile */
+@media (max-width: 768px) {
+    .layout-container {
+        flex-direction: column;
+        height: 100%;
+        overflow: hidden;
+
+        width: 90%;
+    }
+
+    .sounds-list {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .sound-card {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .mic-section {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .options-container {
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .spinner-container {
+        margin-bottom: 20px;
+    }
+
+    .status-message {
+        font-size: 14px;
+    }
+
+    .plusButton {
+        width: 60px;
+        height: 60px;
+    }
+
+    .plusIcon {
+        width: 40px;
+        height: 40px;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .span-mother,
+    .span-mother2 {
+        font-size: 18px;
+    }
+
+    .card-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sound-name,
+    .sound-date {
+        display: none;
+        font-size: 16px;
+    }
+
+    .divider {
+        display: none;
+    }
+
+    .sounds-list {
+        width: 90%;
+        margin: 0 auto;
+        padding: 15px;
+        background-color: #1d1f27;
+        border-radius: 8px;
+    }
+
+    .sounds-list h2 {
+        color: #ffffff;
+        text-align: center;
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .sound-card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #2a2d37;
+        padding: 10px;
+        text-align: center;
+        border-radius: 6px;
+        margin-bottom: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .sound-name {
+        font-size: 16px;
+        font-weight: bold;
+        color: #ffffff;
+        /* margin-bottom: 5px; */
+        /* word-wrap: break-word; */
+        /* Ensures long names break to the next line */
+        max-width: 100%;
+        /* Ensures it fits within the card */
+    }
+
+    .sound-date {
+        font-size: 12px;
+        color: #a5a5a5;
+        margin-bottom: 10px;
+        /* Adds more space below the date */
+    }
+
+    /* Ensure audio controls are visible and user-friendly */
+    .audio-player {
+        width: 100%;
+        margin-top: 10px;
+        border-radius: 4px;
+    }
+
+    /* Additional styles to make progress bar and controls more prominent */
+    audio::-webkit-media-controls-panel {
+        background-color: #333;
+        border-radius: 5px;
+    }
+
+    audio::-webkit-media-controls-play-button,
+    audio::-webkit-media-controls-volume-slider {
+        filter: brightness(2);
+    }
+
+    /* Improve visibility of the audio progress bar */
+    audio::-webkit-media-controls-timeline {
+        height: 8px;
+    }
+
+
+    .plusButton {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Additional small screen adjustments */
+@media (max-width: 480px) {
+
+    .layout-container {
+        flex-direction: column;
+        height: 100%;
+        overflow: hidden;
+        width: 90%;
+    }
+
+    .sounds-list {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    button {
+        width: 50%;
+        font-size: 20px;
+    }
+
+    .plusIcon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .span-mother,
+    .span-mother2 {
+        font-size: 16px;
+        width: 100%;
+        display: none;
+    }
+
+    .status-message {
+        font-size: 12px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .sounds-list {
+        width: 90%;
+        margin: 0 auto;
+        padding: 15px;
+        background-color: #1d1f27;
+        border-radius: 8px;
+    }
+
+    .sounds-list h2 {
+        color: #ffffff;
+        text-align: center;
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .sound-card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #2a2d37;
+        /* padding: 10px; */
+        border-radius: 6px;
+        color: white;
+        margin-bottom: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .sound-name {
+        font-size: 16px;
+        font-weight: bold;
+        color: #ffffff;
+        margin-bottom: 5px;
+        word-wrap: break-word;
+        /* Ensures long names break to the next line */
+        max-width: 100%;
+        /* Ensures it fits within the card */
+    }
+
+    .sound-date {
+        font-size: 12px;
+        color: #a5a5a5;
+        margin-bottom: 10px;
+        /* Adds more space below the date */
+    }
+
+    /* Ensure audio controls are visible and user-friendly */
+    .audio-player {
+        width: 100%;
+        margin-top: 10px;
+        border-radius: 4px;
+    }
+
+    /* Additional styles to make progress bar and controls more prominent */
+    audio::-webkit-media-controls-panel {
+        background-color: #919191;
+        border-radius: 5px;
+    }
+
+    audio::-webkit-media-controls-play-button,
+    audio::-webkit-media-controls-volume-slider {
+        filter: brightness(2);
+    }
+
+    /* Improve visibility of the audio progress bar */
+    audio::-webkit-media-controls-timeline {
+        height: 8px;
+    }
+
+
+    .plusButton {
+        width: 50px;
+        height: 50px;
+    }
 }
