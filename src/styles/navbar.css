@@ -55,7 +55,7 @@
 /* Responsive Adjustments Using Media Queries */
 @media (max-width: 768px) {
     .navitems {
-        width: 150%;
+        width: 100%;
         /* Adjust width for smaller screens */
         height: 5rem;
         padding-left: 5px;
@@ -76,7 +76,7 @@
 
 @media (max-width: 480px) {
     .navitems {
-        width: 100%;
+        width: 50%;
         /* Further reduce width for mobile screens */
         height: 4rem;
         /* Decrease height even more */
